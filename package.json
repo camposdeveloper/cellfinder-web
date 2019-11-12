@@ -1,0 +1,17 @@
+{
+  "name": "cellfinder-core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "google-spreadsheet": "^2.0.8"
+  },
+  "devDependencies": {
+    "electron": "^7.0.1"
+  }
+}
