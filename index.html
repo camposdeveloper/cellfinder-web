@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+   <form>
+       <!--Aqui temos um botao simples chamando a função que era pra fazer o CRUD 
+        com nossa planilha-->
+
+        <input type="button" value="teste" onclick="accessSheet()">
+
+        <script>
+        
+        //Essas funções fazem a autenticação com a API do googlesheet:
+
+        const GoogleSpreadsheet = require('google-spreadsheet')
+        const credentials = require ('./credentials.json')
+
+        const { promisify } = require('util')
+        const docId = '1f7UznepF4rX43WDiYfUXHnpKqEs5w_fVOuu1IZhEO8M'
+
+        // Aqui é definido qual documento vamos acessar:
+
+        const accessSheet = async() =>{
+            
+            const doc = new GoogleSpreadsheet(docId)
+            await promisify(doc.useServiceAccountAuth)(credentials)
+            const info = await promisify(doc.getInfo)()
+            const worksheet = info.worksheets[0]
+            const rows = await promisify(worksheet.getRows)({
+        
+            })
+  
+            rows.forEach(row =>{
+                console.log(row.nome)
+  
+            })
+  
+        }       
+        
+        </script>
+        
+       
+    
+   </form>
+    
+    
+    
+</body>
+</html>
