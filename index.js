@@ -18,7 +18,10 @@ const accessSheet = async() =>{
     })
   
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 function clickButton(){
 
   accessSheet()
@@ -26,6 +29,10 @@ function clickButton(){
   
 }
 
+<<<<<<< HEAD
 clickButton()
 
 //para rodar esse codigo abra o terminal e digite "node index.js"
+=======
+clickButton()
+>>>>>>> master
